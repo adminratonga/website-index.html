@@ -1,0 +1,57 @@
+body {
+  font-family: Georgia, serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+  background: white;
+  z-index: 0;                /* 确保比伪元素高 */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(224, 239, 236)              
+  z-index: -1;
+}
+
+
+.page-wrapper {
+  position: relative;              /* 相对定位，便于内部按钮定位 */
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.0);
+  backdrop-filter: blur(4px);
+  overflow: visible;
+  z-index: -1;}
+
+
+.back-to-top {
+  position: fixed;              /* 固定在视口 */
+  bottom: 30px;                 /* 距离底部 30px */
+  right: 30px;                  /* 距离右边 30px */
+  display: inline-block;
+  padding: 10px 16px;
+  background: rgba(100,130,24); /* 半透明绿色背景 */
+  border: 2px solid rgba(31, 70, 39, 0.6s); /* 半透明绿色边框 */
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000; /* 保证在最上层 */
+}
+
+.back-to-top:hover {
+  background: rgba(31, 70, 39, 1);  /* 悬停时变为深绿色 */
+  text-decoration: underline;
+  transform: translateY(-2px);     /* 向上浮动一点 */
+}

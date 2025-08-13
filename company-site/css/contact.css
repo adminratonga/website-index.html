@@ -1,0 +1,137 @@
+/* 整体容器 */
+.services-section {
+  padding: 24px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 大标题与首页 page-title 样式保持一致 */
+.page-title {
+  font-family: Georgia, serif;
+  font-size: 52px;
+  margin-bottom: 32px;
+  text-shadow:
+    2px 0 4px white,    /* 右侧阴影 */
+    0 2px 4px white;    /* 下方阴影 */
+}
+.page-wrapper {
+  margin: 5px auto 15px; /* 上80px，左右自动，底部40px */
+}
+
+.contact-section {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  gap: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.contact-info-card {
+  font-family: Georgia, serif; 
+  flex: 1 1 320px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  padding: 24px 20px;
+  font-family: Georgia, serif;
+  color: #222;
+  min-width: 280px;
+}
+
+.contact-info-card h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: rgb(57,98,24);
+}
+
+.icon-mail {
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  fill: rgb(57,98,24);
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(57,98,24)"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><polyline points="2,7 12,13 22,7" stroke="none"/></svg>') no-repeat center;
+  background-size: contain;
+}
+
+
+/* 表单样式 */
+.contact-form {
+  flex: 2 1 600px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  padding: 24px 24px 32px;
+  font-family: Georgia, serif;
+  color: #222;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: rgb(57,98,24);
+}
+
+.contact-form label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-family: Georgia, serif;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: rgb(57,98,24);
+  box-shadow: 0 0 5px rgb(57,98,24);
+}
+
+.contact-form button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background-color: rgb(57,98,24);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: rgb(40,70,16);
+}
+
+/* 响应式 */
+@media (max-width: 800px) {
+  .contact-section {
+    flex-direction: column;
+  }
+  .contact-info-card, .contact-form {
+    flex: none;
+    width: 100%;
+    min-width: unset;
+  }
+}

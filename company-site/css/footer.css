@@ -1,0 +1,132 @@
+.site-footer {
+  display: flex;
+  height: 200px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  color: rgba(225,225,225,1);
+  background: url('../images/header-bg.jpg') center bottom / cover no-repeat;
+}
+
+/* 渐变遮罩保持不变 */
+.site-footer::after {
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+/* 导航 - 大屏竖直绝对定位 */
+.footer-nav {
+  position: absolute;
+  top: 15px;
+  left: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 50px);
+  max-width: 200px;
+  padding: 0;
+  width: auto;
+  z-index: 3;
+}
+
+.footer-nav a {
+  position: relative;
+  color: rgba(225,225,225,1);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  padding: 6px 12px 6px 28px;
+  border-radius: 6px;
+  text-align: left;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.footer-nav a::before {
+  content: "•";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(224, 239, 236, 0.8);
+  font-size: 20px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.footer-nav a:hover {
+  font-family: Georgia, serif;
+  text-decoration: underline;
+  transform: translateY(-2px);
+  background: rgba(31, 70, 39, 0.6);
+}
+
+/* 版权信息 */
+.footer-main {
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 15px;
+  left: 45%;
+  z-index: 3;
+}
+
+.footer-main p {
+  line-height: 1.5;
+  user-select: text;
+  margin: 0.3em 0;
+  cursor: text;
+  color: #f1f1f1;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* 手机端适配：取消绝对定位，改为纵向堆叠 */
+@media screen and (max-width: 600px) {
+  .site-footer {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .footer-nav {
+    position: relative;
+    top: auto;
+    left: auto;
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-direction: row; /* 横向排列，方便手机显示 */
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .footer-nav a {
+    margin: 0;
+    padding: 6px 12px;
+    flex: 1 1 auto; /* 使链接可以换行占据可用空间 */
+    text-align: center;
+    border-radius: 6px;
+  }
+
+  .footer-nav a::before {
+    left: 6px;
+    font-size: 16px;
+  }
+
+  .footer-main {
+    position: relative;
+    top: auto;
+    left: auto;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
